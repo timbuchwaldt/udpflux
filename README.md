@@ -1,6 +1,5 @@
 #UdpFlux
-[![Build Status](https://travis-ci.org/timbuchwaldt/udpflux.svg)](https://travis-ci.org/timbuchwaldt/udpflux) [![Coverage Status](https://coveralls.io/repos/timbuchwaldt/udpflux/badge.svg)](https://coveralls.io/r/timbuchwaldt/udpflux)
-
+[![Build Status](https://travis-ci.org/timbuchwaldt/udpflux.svg)](https://travis-ci.org/timbuchwaldt/udpflux)
 
 This is an opinionated InfluxDB client, built to only work with InfluxDB 0.9 and it's UDP line protocol.
 
