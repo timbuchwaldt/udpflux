@@ -3,6 +3,7 @@ defmodule Udpflux.Mixfile do
 
   def project do
     [app: :udpflux,
+     package: package,
      version: "0.0.1",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
@@ -30,6 +31,14 @@ defmodule Udpflux.Mixfile do
   defp deps do
     [
       {:excoveralls, "~> 0.3", only: [:dev, :test]}
+    ]
+  end
+
+  defp package do
+    [
+      description: "An opinionated UDP-only InfluxDB client",
+      licenses: ["MIT"],
+      links: %{"GitHub"=>"https://github.com/timbuchwaldt/udpflux"}
     ]
   end
 end
