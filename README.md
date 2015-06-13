@@ -1,5 +1,5 @@
 #UdpFlux
-
+[![Build Status](https://travis-ci.org/timbuchwaldt/udpflux.svg)](https://travis-ci.org/timbuchwaldt/udpflux)
 This is an opinionated InfluxDB client, built to only work with InfluxDB 0.9 and it's UDP line protocol.
 
 It's meant to instantly ship available events off to InfluxDB, taking the risk of loosing events due to UDP usage. It also let's InfluxDB decide upon the timestamp, as I can't be bothered to make sure the clocks are all fine ;)
