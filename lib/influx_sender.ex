@@ -1,4 +1,4 @@
-defmodule InfluxSender do
+defmodule UDPFlux.Sender do
   use GenServer
 
   def write_point(pid, point) do
@@ -19,7 +19,7 @@ defmodule InfluxSender do
 
 
   def handle_cast({:write_point, point}, %{socket: socket, server: server}) do
-    binary_representation = DataPoint.dump(point)
+    binary_representation = UDPFlux.DataPoint.dump(point)
     send_buffer(binary_representation, socket, server)
     {:noreply, %{socket: socket, server: server}}
   end

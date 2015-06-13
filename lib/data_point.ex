@@ -1,4 +1,4 @@
-defmodule DataPoint do
+defmodule UDPFlux.DataPoint do
   defstruct name: "", tags: [], fields: []
 
   def dump(point) do
