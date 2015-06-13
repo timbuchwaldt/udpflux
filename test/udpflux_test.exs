@@ -2,7 +2,7 @@ defmodule UdpfluxTest do
   use ExUnit.Case
 
   setup do
-    {:ok, pid} = UDPFlux.Sender.start_link(%{ip: {127,0,0,1}, port: 2808})
+    {:ok, pid} = UDPFlux.Sender.start_link(%{ip: "127.0.0.1", port: 2808})
     {:ok, pid: pid}
   end
 

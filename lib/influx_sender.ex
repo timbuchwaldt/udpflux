@@ -6,7 +6,7 @@ defmodule UDPFlux.Sender do
   end
 
   def start_link(server) do
-    # Expects server-hash: %{ip: {127,0,0,1}, port: 4444}
+    # Expects server-hash: %{ip: {"127.0.0.1"}, port: 4444}
     GenServer.start_link(__MODULE__, server)
   end
 
@@ -14,7 +14,10 @@ defmodule UDPFlux.Sender do
   def init(server) do
     # Initialize UDP-Socket to random port
     {:ok, socket} = :gen_udp.open(0)
-    {:ok, %{server: server, socket: socket}}
+    # We parse a elixir string containing an ip-adress to an erlang compatible
+    # representation
+    {:ok, ip} = :inet.parse_address(String.to_char_list(server.ip))
+    {:ok, %{server:  %{ip: ip, port: server.port}, socket: socket}}
   end
 
 
