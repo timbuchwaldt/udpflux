@@ -7,7 +7,8 @@ defmodule Udpflux.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     test_coverage: [tool: ExCoveralls]]
   end
 
   # Configuration for the OTP application
@@ -27,6 +28,8 @@ defmodule Udpflux.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:excoveralls, "~> 0.3", only: [:dev, :test]}
+    ]
   end
 end

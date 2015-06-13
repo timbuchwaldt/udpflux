@@ -1,0 +1,6 @@
+language: elixir
+otp_release:
+  - 17.4
+script: "MIX_ENV=test mix do deps.get, test"
+after_success:
+  - "mix compile && mix coveralls.travis"
