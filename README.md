@@ -7,7 +7,7 @@ It's meant to instantly ship available events off to InfluxDB, taking the risk o
 
 # Usage
 
-1. Instantiate the InfluxSender GenServer: `{:ok, pid} = UDPFlux.Sender.start_link(%{ip: {127,0,0,1}, port: 4444})`
+1. Instantiate the InfluxSender GenServer: `{:ok, pid} = UDPFlux.Sender.start_link(%{ip: "127.0.0.1", port: 4444})`
 2. Create events: `point = %UDPFlux.DataPoint{name: "foo", tags: [key: "value"], fields: [value: 0.069]}`
 3.  Ship events: `UDPFlux.Sender.write_point(pid, point)`
 4. Done. The point is now racing to the InfluxDB specified. Make sure to configure it correctly, the values below work for me
