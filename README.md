@@ -1,4 +1,4 @@
-#UdpFlux
+# UdpFlux
 [![Build Status](https://travis-ci.org/timbuchwaldt/udpflux.svg)](https://travis-ci.org/timbuchwaldt/udpflux)
 
 This is an opinionated InfluxDB client, built to only work with InfluxDB 0.9 and it's UDP line protocol.
@@ -12,7 +12,7 @@ It's meant to instantly ship available events off to InfluxDB, taking the risk o
 3.  Ship events: `UDPFlux.Sender.write_point(pid, point)`
 4. Done. The point is now racing to the InfluxDB specified. Make sure to configure it correctly, the values below work for me
 
-```
+```toml
 [udp]
   enabled = true
   bind-address = "0.0.0.0:4444"
